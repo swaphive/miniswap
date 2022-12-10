@@ -3,7 +3,7 @@ const ssc = new SSC('https://ha.herpc.dtools.dev');
 var DECIMAL = 1000;
 var rewardSplitPercentage = 20;
 var feePercentage = 0.001;
-var rewardPercentage = 0.017;
+var rewardPercentage = 0.0017;
 
 var rpc_nodes = [
     "https://api.deathwing.me",
@@ -35,9 +35,10 @@ window.onload = async function() {
 
 async function loadRewardPercentages() {
     try
-    {
+    {     
         document.getElementById("rewardSplitId").innerHTML = rewardSplitPercentage;
-        var setRewardPercentage = parseFloat(rewardPercentage) || 0.0 * 100;
+        var floatRewardPercentage = parseFloat(rewardPercentage) || 0.0;        
+        var setRewardPercentage = Math.ceil((floatRewardPercentage * 100) * DECIMAL) / DECIMAL;
         document.getElementById("rewardPercentageId").innerHTML = setRewardPercentage;
     }
     catch (error)
