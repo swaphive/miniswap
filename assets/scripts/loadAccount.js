@@ -2,8 +2,8 @@ const ssc = new SSC('https://ha.herpc.dtools.dev');
 
 var DECIMAL = 1000;
 var rewardSplitPercentage = 20;
-var feePercentage = 0.001;
-var rewardPercentage = 0.0017;
+var feePercentage = 0.0015;
+var rewardPercentage = 0.0014;
 
 var rpc_nodes = [
     "https://api.deathwing.me",
